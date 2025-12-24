@@ -1,15 +1,15 @@
 ---
 layout: home
-title: "Locio - Fast Lines of Code & File Statistics"
+title: "LocIO - Fast Lines of Code & File Statistics"
 titleTemplate: false
 
 hero:
-  name: "Locio"
-  text: "Fast code statistics for your projects"
+  name: "LocIO"
+  text: "Fast lines of code & file statistics"
   tagline: "A powerful CLI to count files and lines with rich filters and detailed stats."
   image:
     src: "/logo.png"
-    alt: Locio Logo
+    alt: LocIO Logo
     width: 512
     height: 512
   actions:
@@ -34,8 +34,8 @@ features:
     title: Multiple output formats
     details: Human-readable, JSON, CSV, and TSV outputs for pipelines and reports.
   - icon: ⚡
-    title: Rust-powered performance
-    details: Built with Rust for speed and efficiency on large codebases.
+    title: TypeScript-powered performance
+    details: Built with TypeScript for speed and efficiency on large codebases.
   - icon: 🛠️
     title: Flexible CLI
     details: Simple defaults with advanced flags when you need more control.
@@ -43,8 +43,8 @@ features:
 
 ## Learn More
 
-- **[Get Started](/get-started)** – Install Locio and run your first counts
+- **[Get Started](/get-started)** – Install LocIO and run your first counts
 - **[Usage](/usage)** – Full command-line reference and options
 - **[GitHub Repository](https://github.com/kiron0/locio)** – Source code, issues, and contributions
 
-_"Locio: Count your code, not your worries."_
+_"LocIO: Count your code, not your worries."_

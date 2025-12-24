@@ -1,6 +1,6 @@
 # CLI Usage
 
-The **Locio CLI** (`locio` or `lc`) lets you quickly count files and lines of code in directories with powerful filters and rich statistics.
+The **LocIO CLI** (`locio`) lets you quickly count files and lines of code in directories with powerful filters and rich statistics.
 
 This page provides an overview of the most common commands and flags.
 
@@ -13,13 +13,13 @@ This page provides an overview of the most common commands and flags.
 
 ## Detailed Options Reference
 
-Below is a complete list of all Locio CLI arguments and what they do.
+Below is a complete list of all LocIO CLI arguments and what they do.
 
 ### Positional Argument
 
 - **`directory`**
   - **Type**: path (default: `.`)
-  - **Description**: Root directory to scan. If omitted, Locio scans the current working directory.
+  - **Description**: Root directory to scan. If omitted, LocIO scans the current working directory.
   - **Examples**:
     - `locio` (current directory)
     - `locio ./src`
@@ -39,7 +39,7 @@ Below is a complete list of all Locio CLI arguments and what they do.
   - **Use when**: You only care about total lines of code.
   - **Example**: `locio --lines-only`
 
-> If both are omitted, Locio reports **both files and lines**.
+> If both are omitted, LocIO reports **both files and lines**.
 
 ---
 
@@ -54,7 +54,7 @@ Below is a complete list of all Locio CLI arguments and what they do.
 
 - **`--exclude-ext <EXTENSIONS>`**
   - **Type**: comma-separated list
-  - **Description**: Exclude files with the given extensions. Dots are optional (`rs` and `.rs` are both accepted).
+  - **Description**: Exclude files with the given extensions. Dots are optional (`ts` and `.ts` are both accepted).
   - **Examples**:
     - `locio --exclude-ext log,tmp`
     - `locio --exclude-ext .png,.jpg`
@@ -63,7 +63,7 @@ Below is a complete list of all Locio CLI arguments and what they do.
   - **Type**: comma-separated list
   - **Description**: Include **only** files with the given extensions.
   - **Examples**:
-    - `locio --include-ext rs`
+    - `locio --include-ext ts`
     - `locio --include-ext ts,tsx,js`
 
 - **`--exclude-dir <PATTERN>`**
@@ -114,7 +114,7 @@ Below is a complete list of all Locio CLI arguments and what they do.
 
 - **`--max-depth <DEPTH>`**
   - **Type**: integer
-  - **Description**: Limit how deep Locio will traverse from the root directory. `1` means only the root directory itself.
+  - **Description**: Limit how deep LocIO will traverse from the root directory. `1` means only the root directory itself.
   - **Examples**:
     - `locio --max-depth 1`
     - `locio --max-depth 3`
@@ -151,7 +151,7 @@ Below is a complete list of all Locio CLI arguments and what they do.
   - **Description**: Show detailed statistics (extensions, directories, etc.) instead of just simple totals.
   - **Examples**:
     - `locio --stats`
-    - `locio --include-ext rs,ts --stats`
+    - `locio --include-ext ts,tsx --stats`
 
 - **`-p`, `--progress`**
   - **Description**: Show progress information while scanning (useful for large projects).
@@ -159,12 +159,12 @@ Below is a complete list of all Locio CLI arguments and what they do.
 
 - **`--export <FORMAT>`**
   - **Type**: `human` | `json` | `csv` | `tsv` (optional, defaults to `human` if omitted)
-  - **Description**: Write the report to a file named `locio-report.{ext}` in the given format instead of only printing to stdout.
+  - **Description**: Write the report to a file named `LocIO-report.{ext}` in the given format instead of only printing to stdout.
   - **Details**:
-    - `--export` or `--export human` → `locio-report.txt`
-    - `--export json` → `locio-report.json`
-    - `--export csv` → `locio-report.csv`
-    - `--export tsv` → `locio-report.tsv`
+    - `--export` or `--export human` → `LocIO-report.txt`
+    - `--export json` → `LocIO-report.json`
+    - `--export csv` → `LocIO-report.csv`
+    - `--export tsv` → `LocIO-report.tsv`
   - **Examples**:
     - `locio --stats --export`
     - `locio --stats --export json`
@@ -193,7 +193,7 @@ Below is a complete list of all Locio CLI arguments and what they do.
 
 ## Links
 
-- **[Get Started](/get-started)** – Install Locio and run your first counts
+- **[Get Started](/get-started)** – Install LocIO and run your first counts
 - **[GitHub Repository](https://github.com/kiron0/locio)** – Source code, issues, and contributions
 
-_"Locio: Count your code, not your worries."_
+_"LocIO: Count your code, not your worries."_

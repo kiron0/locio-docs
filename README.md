@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="./src/public/logo.png" alt="Locio Logo" width="128" height="128">
+  <img src="./src/public/logo.png" alt="LocIO Logo" width="128" height="128">
   <h1 align="center">
-    Locio
+    LocIO
   </h1>
 
   <p align="center">
-    Official documentation for <strong>Locio</strong> – a powerful CLI tool to count lines and files with rich filtering and statistics.
+    Official documentation for <strong>LocIO</strong> – a powerful CLI tool to count lines and files with rich filtering and statistics.
   </p>
 
   <p align="center">
@@ -19,9 +19,9 @@
 
 ---
 
-## 🚀 What is Locio?
+## 🚀 What is LocIO?
 
-Locio is a **fast, Rust-powered CLI** that helps you analyze your codebase by counting **files** and **lines of code** with powerful filters and rich statistics.
+LocIO is a **fast, TypeScript-powered CLI** that helps you analyze your codebase by counting **files** and **lines of code** with powerful filters and rich statistics.
 
 Key capabilities:
 
@@ -33,7 +33,7 @@ Key capabilities:
 - **Binary detection** to skip binary files automatically
 - **Multiple output formats**: human-readable, JSON, CSV, TSV
 - **Rich statistics** by extension and directory
- - **Exportable reports**: save results as `locio-report.{txt,json,csv,tsv}` with a single flag
+ - **Exportable reports**: save results as `LocIO-report.{txt,json,csv,tsv}` with a single flag
 
 ---
 
@@ -56,8 +56,8 @@ locio
 # Count in a specific directory
 locio /path/to/directory
 
-# Count only Rust files with statistics
-locio --include-ext rs --stats
+# Count only TypeScript files with statistics
+locio --include-ext ts --stats
 ```
 
 See the **CLI Usage** and **Examples** sections in this docs site for more options and patterns.
@@ -73,5 +73,3 @@ This `/docs` folder is a VitePress-powered documentation site hosted at **https:
 - Filtering and pattern examples
 - Output format details (JSON / CSV / TSV)
 - Best practices for analyzing large codebases
-
-For the package README itself, see the [`package/README.md`](../package/README.md) file in this repository.

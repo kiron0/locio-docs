@@ -1,19 +1,19 @@
 # Get Started
 
-This guide walks you through installing **Locio**, running your first counts, and using a few common CLI patterns.
+This guide walks you through installing **LocIO**, running your first counts, and using a few common CLI patterns.
 
 ## What's in a name?
 
-**Locio** combines:
-- **loc** → Lines Of Code (industry-standard abbreviation)
-- **io** → input/output or interface/system (common tech suffix)
+**LocIO** combines:
+- **Loc** → Lines Of Code (industry-standard abbreviation)
+- **IO** → input/output or interface/system (common tech suffix)
 
-So **locio** ≈ "lines-of-code I/O / system" — a tool that handles the input/output of counting your code.
+So **LocIO** ≈ "lines-of-code I/O / system" — a tool that handles the input/output of counting your code.
 
 ---
 
-## 1. Install Locio
-You can either run Locio via `npx` (**recommended**) or install it globally.
+## 1. Install LocIO
+You can either run LocIO via `npx` (**recommended**) or install it globally.
 
 ### Run with npx (no global install)
 
@@ -21,7 +21,7 @@ You can either run Locio via `npx` (**recommended**) or install it globally.
 npx locio@latest
 ```
 
-This will download and run the latest Locio release without adding anything permanent to your global PATH.
+This will download and run the latest LocIO release without adding anything permanent to your global PATH.
 
 ### Install globally with npm
 
@@ -34,12 +34,6 @@ After installation, verify it worked:
 ```bash
 locio --help
 locio --version
-```
-
-You can also use the shorter alias:
-
-```bash
-lc --help
 ```
 
 ---
@@ -68,11 +62,11 @@ locio /path/to/directory
 
 ## 3. Focus on specific file types
 
-Use `--include-ext` to limit the scan to certain extensions. Dots are optional (`rs` and `.rs` both work):
+Use `--include-ext` to limit the scan to certain extensions. Dots are optional (`ts` and `.ts` both work):
 
 ```bash
-# Only Rust files
-locio --include-ext rs --stats
+# Only TypeScript files
+locio --include-ext ts --stats
 
 # TypeScript and JavaScript
 locio --include-ext ts,tsx,js --stats
@@ -115,17 +109,17 @@ This:
 
 ## 6. Export results
 
-Use structured formats to pipe results into other tools. You can either redirect output yourself or use `--export` to let Locio write the report file for you.
+Use structured formats to pipe results into other tools. You can either redirect output yourself or use `--export` to let LocIO write the report file for you.
 
 ```bash
 # JSON
-locio --stats --export json             # writes locio-report.json
+locio --stats --export json             # writes LocIO-report.json
 
 # CSV
-locio --stats --export csv              # writes locio-report.csv
+locio --stats --export csv              # writes LocIO-report.csv
 
 # TSV
-locio --stats --export tsv              # writes locio-report.tsv
+locio --stats --export tsv              # writes LocIO-report.tsv
 ```
 
 These files can be loaded into dashboards, spreadsheets, or analysis scripts.
@@ -134,10 +128,10 @@ These files can be loaded into dashboards, spreadsheets, or analysis scripts.
 
 ## 7. Common workflows
 
-### Analyze a Rust project
+### Analyze a TypeScript project
 
 ```bash
-locio . --include-ext rs --stats
+locio . --include-ext ts --stats
 ```
 
 ### Analyze a TypeScript/JavaScript monorepo
@@ -152,7 +146,7 @@ locio . \
 ### Generate a JSON report for CI
 
 ```bash
-locio . --stats --export json    # writes locio-report.json
+locio . --stats --export json    # writes LocIO-report.json
 ```
 
 ---
@@ -162,4 +156,4 @@ locio . --stats --export json    # writes locio-report.json
 - **[Usage](/usage)** – Complete list of flags and options
 - **[GitHub Repository](https://github.com/kiron0/locio)** – Source code, issues, and contributions
 
-_"Locio: Count your code, not your worries."_
+_"LocIO: Count your code, not your worries."_

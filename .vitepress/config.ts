@@ -1,7 +1,7 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
-  title: "Locio",
+  title: "LocIO",
   description:
     "A fast CLI tool to count lines and files in directories with powerful filters and rich statistics.",
 
@@ -20,7 +20,7 @@ export default defineConfig({
       "meta",
       {
         property: "og:title",
-        content: "Locio - Fast Lines of Code & File Statistics",
+        content: "LocIO - Fast Lines of Code & File Statistics",
       },
     ],
     [
@@ -39,7 +39,7 @@ export default defineConfig({
       "meta",
       {
         name: "twitter:title",
-        content: "Locio - Fast Lines of Code & File Statistics",
+        content: "LocIO - Fast Lines of Code & File Statistics",
       },
     ],
     [
@@ -56,7 +56,7 @@ export default defineConfig({
   themeConfig: {
     logo: {
       src: "/logo.png",
-      alt: "Locio Logo",
+      alt: "LocIO Logo",
     },
 
     nav: [
