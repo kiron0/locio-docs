@@ -1,0 +1,29 @@
+{
+  "name": "locio-docs",
+  "version": "1.0.0",
+  "description": "Documentation for Locio CLI",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev --port 3000",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "clean": "rm -rf .vitepress/dist",
+    "format": "prettier --write \"**/*.{css,js,json,md,vue}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "vitepress": "^2.0.0-alpha.15"
+  },
+  "keywords": [
+    "locio",
+    "documentation",
+    "vitepress"
+  ],
+  "author": "Toufiq Hasan Kiron <hello@kiron.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiron0/locio.git"
+  },
+  "homepage": "https://locio.js.org"
+}
