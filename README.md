@@ -31,9 +31,14 @@ Key capabilities:
 - **Multiple extensions** in a single run (e.g. `rs,ts,js`)
 - **Size filtering** by minimum and maximum file size
 - **Binary detection** to skip binary files automatically
-- **Multiple output formats**: human-readable, JSON, CSV, TSV
+- **Comment analysis** - count comment lines separately (full-line and inline)
+- **Remove comments** - automatically remove comments from code files with `--rm-comments`
+- **Project type detection** - automatically detects and applies project-specific excludes
+- **Watch mode** - automatically rescan on file changes
+- **Top files/directories** - show largest files and directories with most files
+- **Multiple output formats**: human-readable, JSON, CSV, TSV, Markdown, HTML
 - **Rich statistics** by extension and directory
- - **Exportable reports**: save results as `LocIO-report.{txt,json,csv,tsv}` with a single flag
+- **Exportable reports**: save results as `LocIO-report.{txt,json,csv,tsv,md,html}` with a single flag
 
 ---
 

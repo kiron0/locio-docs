@@ -120,6 +120,18 @@ locio --stats --export csv              # writes LocIO-report.csv
 
 # TSV
 locio --stats --export tsv              # writes LocIO-report.tsv
+
+# Markdown
+locio --stats --export markdown         # writes LocIO-report.md
+
+# HTML
+locio --stats --export html             # writes LocIO-report.html
+
+# Multiple formats at once
+locio --stats --export json,html,markdown
+
+# Custom output directory
+locio --stats --export json --export-path ./reports
 ```
 
 These files can be loaded into dashboards, spreadsheets, or analysis scripts.
@@ -147,6 +159,38 @@ locio . \
 
 ```bash
 locio . --stats --export json    # writes LocIO-report.json
+```
+
+### Analyze comments in your codebase
+
+```bash
+# Count comments separately (automatically enabled when using --stats)
+locio . --stats
+
+# Show code vs comments ratio
+locio . --code-vs-comments --stats
+```
+
+### Remove comments from code files
+
+```bash
+# Remove comments from all supported files
+locio . --rm-comments
+
+# Remove comments only from TypeScript files
+locio . --rm-comments ts
+
+# Remove comments from multiple file types
+locio . --rm-comments js,ts,py
+```
+
+**Note**: The `--rm-comments` flag automatically ignores documentation and config files (`.md`, `.json`, `.yaml`, `.csv`, `.html`, etc.) to prevent accidental modification.
+
+### Watch for changes
+
+```bash
+# Automatically rescan when files change
+locio . --watch
 ```
 
 ---

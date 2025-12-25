@@ -158,16 +158,27 @@ Below is a complete list of all LocIO CLI arguments and what they do.
   - **Example**: `locio --progress`
 
 - **`--export <FORMAT>`**
-  - **Type**: `human` | `json` | `csv` | `tsv` (optional, defaults to `human` if omitted)
+  - **Type**: `human` | `json` | `csv` | `tsv` | `markdown` | `html` (optional, defaults to `human` if omitted)
   - **Description**: Write the report to a file named `LocIO-report.{ext}` in the given format instead of only printing to stdout.
   - **Details**:
     - `--export` or `--export human` → `LocIO-report.txt`
     - `--export json` → `LocIO-report.json`
     - `--export csv` → `LocIO-report.csv`
     - `--export tsv` → `LocIO-report.tsv`
+    - `--export markdown` or `--export md` → `LocIO-report.md`
+    - `--export html` → `LocIO-report.html`
+    - Multiple formats: `--export json,html,markdown` → creates all three files
   - **Examples**:
     - `locio --stats --export`
     - `locio --stats --export json`
+    - `locio --stats --export json,html,markdown`
+
+- **`--export-path <DIR>`**
+  - **Type**: directory path
+  - **Description**: Specify output directory for exported reports. Files will use default naming (LocIO-report.{ext}). Directories will be created automatically if they don't exist.
+  - **Examples**:
+    - `locio --stats --export json --export-path ./reports`
+    - `locio --stats --export json,html --export-path ./output`
 
 ---
 
@@ -180,6 +191,55 @@ Below is a complete list of all LocIO CLI arguments and what they do.
 - **`-q`, `--quiet`**
   - **Description**: Reduce or suppress non-essential output (useful in scripts/CI).
   - **Example**: `locio --quiet --stats --export json`
+
+---
+
+### Comment Analysis
+
+- **`--comments`**
+  - **Description**: Count comment lines separately from code lines. Shows breakdown of full-line comments and inline comments.
+  - **Note**: Automatically enabled when using `--stats` or `--code-vs-comments`.
+  - **Examples**:
+    - `locio --comments`
+    - `locio --stats` (comments automatically enabled)
+
+- **`--code-vs-comments`**
+  - **Description**: Show code vs comments ratio. Automatically enables `--comments`.
+  - **Example**: `locio --code-vs-comments`
+
+- **`--rm-comments [EXTENSIONS]`**
+  - **Type**: optional comma-separated extensions
+  - **Description**: Remove comments from files (modifies files in place). Optionally specify file extensions to limit processing (e.g., `js,ts,py`). If no extensions specified, all supported files are processed.
+  - **Important**:
+    - This **modifies files permanently** - use with caution!
+    - Certain file types are automatically ignored: `.md`, `.json`, `.yaml`, `.csv`, `.html`, `.log`, `.lock`, etc.
+    - When `--rm-comments` is used, normal reporting is skipped and only comment removal messages are shown.
+  - **Examples**:
+    - `locio --rm-comments` (removes comments from all supported files)
+    - `locio --rm-comments ts,js` (removes comments only from TypeScript and JavaScript files)
+    - `locio src --rm-comments py` (removes comments from Python files in src directory)
+
+---
+
+### Top Files and Directories
+
+- **`--top-files <N>`**
+  - **Type**: integer
+  - **Description**: Show top N largest files by size in the statistics output.
+  - **Example**: `locio --stats --top-files 10`
+
+- **`--top-dirs <N>`**
+  - **Type**: integer
+  - **Description**: Show top N directories with most files in the statistics output.
+  - **Example**: `locio --stats --top-dirs 5`
+
+---
+
+### Watch Mode
+
+- **`-w`, `--watch`**
+  - **Description**: Watch directory for changes and automatically rescan when files are modified, added, or deleted. Press `Ctrl+C` to stop.
+  - **Example**: `locio --watch`
 
 ---
 
