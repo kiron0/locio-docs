@@ -32,7 +32,7 @@ features:
     details: Filter by extensions, glob patterns, directories, file names, and size ranges.
   - icon: 🧮
     title: Multiple output formats
-    details: Human-readable, JSON, CSV, and TSV outputs for pipelines and reports.
+    details: Human-readable, JSON, CSV, TSV, Markdown, and HTML outputs with complete line breakdown (code, comments, blank lines).
   - icon: ⚡
     title: TypeScript-powered performance
     details: Built with TypeScript for speed and efficiency on large codebases.

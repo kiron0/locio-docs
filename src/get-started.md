@@ -134,6 +134,14 @@ locio --stats --export json,html,markdown
 locio --stats --export json --export-path ./reports
 ```
 
+**Export Format Details**:
+- All formats include complete line breakdown: **Code Lines**, **Comment Lines**, and **Blank Lines**
+- JSON exports include `blank_lines` in summary and `by_extension` statistics
+- CSV/TSV exports include a "Blank Lines" column in the statistics table
+- Markdown exports show blank lines in the summary table and statistics by extension
+- HTML exports display blank lines as a card in the summary and a column in the statistics table
+- All exports include a "Files by Directory" section with file-level details
+
 These files can be loaded into dashboards, spreadsheets, or analysis scripts.
 
 ---
@@ -164,12 +172,24 @@ locio . --stats --export json    # writes LocIO-report.json
 ### Analyze comments in your codebase
 
 ```bash
-# Count comments separately (automatically enabled when using --stats)
+# Comment analysis is enabled by default, showing code, comments, and blank lines
 locio . --stats
 
 # Show code vs comments ratio
 locio . --code-vs-comments --stats
+
+# Disable comment analysis if you only need total line counts
+locio . --no-comments
 ```
+
+**Note**: By default, LocIO shows a complete breakdown:
+- **Code Lines**: Lines containing actual code
+- **Comment Lines**: Lines containing comments (full-line and inline)
+- **Blank Lines**: Empty lines (always included in totals)
+
+The formula is: **Total Lines = Code Lines + Comment Lines + Blank Lines**
+
+Blank lines are always included in the total line count and shown in all output formats (console, JSON, CSV, TSV, Markdown, HTML).
 
 ### Remove comments from code files
 

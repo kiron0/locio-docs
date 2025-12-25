@@ -139,10 +139,6 @@ Below is a complete list of all LocIO CLI arguments and what they do.
   - **Description**: Skip files detected as binary (e.g. images, compiled artifacts).
   - **Example**: `locio --no-binary`
 
-- **`--include-blank`**
-  - **Description**: Count blank/empty lines as part of the total line count.
-  - **Example**: `locio --include-blank`
-
 ---
 
 ### Output and statistics
@@ -153,21 +149,22 @@ Below is a complete list of all LocIO CLI arguments and what they do.
     - `locio --stats`
     - `locio --include-ext ts,tsx --stats`
 
-- **`-p`, `--progress`**
-  - **Description**: Show progress information while scanning (useful for large projects).
-  - **Example**: `locio --progress`
+- **`--no-progress`**
+  - **Description**: Disable progress indicator. Progress is enabled by default.
+  - **Example**: `locio --no-progress`
 
 - **`--export <FORMAT>`**
   - **Type**: `human` | `json` | `csv` | `tsv` | `markdown` | `html` (optional, defaults to `human` if omitted)
   - **Description**: Write the report to a file named `LocIO-report.{ext}` in the given format instead of only printing to stdout.
   - **Details**:
     - `--export` or `--export human` → `LocIO-report.txt`
-    - `--export json` → `LocIO-report.json`
-    - `--export csv` → `LocIO-report.csv`
-    - `--export tsv` → `LocIO-report.tsv`
-    - `--export markdown` or `--export md` → `LocIO-report.md`
-    - `--export html` → `LocIO-report.html`
+    - `--export json` → `LocIO-report.json` (includes blank_lines in summary and by_extension stats)
+    - `--export csv` → `LocIO-report.csv` (includes Blank Lines column)
+    - `--export tsv` → `LocIO-report.tsv` (includes Blank Lines column)
+    - `--export markdown` or `--export md` → `LocIO-report.md` (includes Blank Lines in summary and tables)
+    - `--export html` → `LocIO-report.html` (includes Blank Lines card and column in statistics)
     - Multiple formats: `--export json,html,markdown` → creates all three files
+  - **Note**: All export formats include blank lines in the breakdown. The formula is: **Total Lines = Code Lines + Comment Lines + Blank Lines**
   - **Examples**:
     - `locio --stats --export`
     - `locio --stats --export json`
@@ -196,12 +193,18 @@ Below is a complete list of all LocIO CLI arguments and what they do.
 
 ### Comment Analysis
 
-- **`--comments`**
-  - **Description**: Count comment lines separately from code lines. Shows breakdown of full-line comments and inline comments.
-  - **Note**: Automatically enabled when using `--stats` or `--code-vs-comments`.
-  - **Examples**:
-    - `locio --comments`
-    - `locio --stats` (comments automatically enabled)
+- **`--no-comments`**
+  - **Description**: Disable comment counting. Comment analysis is enabled by default and provides breakdown of code lines, comment lines (full-line and inline), and blank lines.
+  - **Example**: `locio --no-comments`
+
+- **`--comments`** (deprecated)
+  - **Description**: This flag is now the default behavior. Use `--no-comments` to disable comment analysis.
+  - **Note**: Comment analysis is automatically enabled by default, showing:
+    - **Code Lines**: Lines containing actual code
+    - **Comment Lines**: Lines containing comments (full-line and inline)
+    - **Blank Lines**: Empty lines (always included in totals)
+
+  **Important**: Blank lines are **always included** in the total line count and shown in all output formats. The formula is: **Total Lines = Code Lines + Comment Lines + Blank Lines**
 
 - **`--code-vs-comments`**
   - **Description**: Show code vs comments ratio. Automatically enables `--comments`.
